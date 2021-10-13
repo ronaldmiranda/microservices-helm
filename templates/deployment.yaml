@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: microservice-app-example
+  name: {{ .Values.container.microserviceName }}
+spec:
+  selector:
+    matchLabels:
+      service: {{ .Values.container.microserviceName }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: microservice-app-example
+        service: {{ .Values.container.microserviceName }}
+    spec:
+      containers:
+      - image: {{ .Values.container.image }}:{{ .Values.container.tag }}
+        {{ if .Values.container.envs }}
+        env:
+        {{ range $key, $value := .Values.container.envs.normalEnvs }}
+        - name: {{ $key }}
+          value: {{$value }}
+        {{ end }}
+        {{ end }}
+        {{ if .Values.container.envs.envsSecretRef }}
+        {{ range $secretenv := .Values.container.envs.envsSecretRef }}
+        - name: {{ $secretenv.ENV_NAME }}
+          valueFrom:
+            secretKeyRef:
+              name: {{$secretenv.SECRET_NAME}}
+              key: {{$secretenv.SECRET_KEY}}
+        {{ end }}
+        {{ end }}
+        name: {{ .Values.container.microserviceName }}-ctn
+        ports:
+        - containerPort: 8081
+        imagePullPolicy: Always
+      restartPolicy: Always

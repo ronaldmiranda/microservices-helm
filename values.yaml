@@ -1,0 +1,17 @@
+# example
+container:
+  microserviceName: auth-api
+  image: ronaldmiranda/auth-api
+  tag: teste
+  envs:
+    normalEnvs:
+      AUTH_API_PORT: "8081"
+      USERS_API_ADDRESS: http://users-api:8083
+      ZIPKIN_URL: http://zipkin-svc.zipkin-system.svc.cluster.local:9411/api/v2/spans
+    envsSecretRef:
+      - ENV_NAME: JWT_SECRET
+        SECRET_NAME: jwt-secret
+        SECRET_KEY: token
+service:
+  servicePort:
+    - 8081
