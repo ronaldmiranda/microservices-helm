@@ -9,6 +9,6 @@ entries:
     name: microservice-deploys
     type: application
     urls:
-    - https://ronaldmiranda.github.io/microservices-helm/microservices-deploy/microservice-deploys-1.0.0.tgz
+    - https://ronaldmiranda.github.io/microservice-deploys/microservices-deploy/microservice-deploys-1.0.0.tgz
     version: 1.0.0
 generated: "2021-10-13T18:21:53.521715-03:00"
