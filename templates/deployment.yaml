@@ -22,7 +22,7 @@ spec:
         env:
         {{ range $key, $value := .Values.container.envs.normalEnvs }}
         - name: {{ $key }}
-          value: {{$value }}
+          value: {{ $value | quote}}
         {{ end }}
         {{ end }}
         {{ if .Values.container.envs.envsSecretRef }}
