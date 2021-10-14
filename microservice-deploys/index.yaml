@@ -3,12 +3,12 @@ entries:
   microservice-deploys:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-10-13T19:13:40.365404-03:00"
+    created: "2021-10-13T21:16:35.412431-03:00"
     description: A Helm chart for Kubernetes
-    digest: 942854c287a8ec135691684be4141331e813eeeb0045a29aa5ae0c7fa5dbabee
+    digest: 0f9c0576be863cea0d3ba86ea1da4982676eaedf00cbb8573940df3c74a8a62d
     name: microservice-deploys
     type: application
     urls:
     - https://ronaldmiranda.github.io/microservices-helm/microservice-deploys/microservice-deploys-1.0.0.tgz
     version: 1.0.0
-generated: "2021-10-13T19:13:40.356671-03:00"
+generated: "2021-10-13T21:16:35.400107-03:00"

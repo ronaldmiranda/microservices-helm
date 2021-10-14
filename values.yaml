@@ -1,6 +1,7 @@
 # example
 container:
   microserviceName: auth-api
+  namespace: microservice-ns
   image: ronaldmiranda/auth-api
   tag: teste
   envs:

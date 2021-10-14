@@ -4,6 +4,7 @@ metadata:
   labels:
     app: microservice-app-example
   name: {{ .Values.container.microserviceName }}
+  namespace: {{ .Values.container.namespace }}
 spec:
   selector:
     matchLabels:
