@@ -4,12 +4,10 @@ metadata:
   labels:
     service: {{ .Values.container.microserviceName }}
   name: {{ .Values.container.microserviceName }}
-  namespace: {{ .Values.container.namespace }}
+  namespace: {{ .Values.namespace }}
 spec:
   ports:
-  {{ range $port := .Values.service.servicePort }}
-  - port: {{ $port }}
-  {{ end }}
+    - port: {{ .Values.service.servicePort }}
   selector:
     service: {{ .Values.container.microserviceName }}
   {{ if .Values.service.typeLoadBalancer }}
