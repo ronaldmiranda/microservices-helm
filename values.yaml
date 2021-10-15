@@ -1,7 +1,7 @@
-# example
+namespace: microservice-ns
+
 container:
-  microserviceName: auth-api
-  namespace: microservice-ns
+  microserviceName: #string
   image: ronaldmiranda/auth-api
   tag: teste
   envs:
@@ -14,6 +14,11 @@ container:
     #     SECRET_NAME: jwt-secret
     #     SECRET_KEY: token
 service:
-  servicePort:
-    - 8081
+  servicePort: 8081
   typeLoadBalancer: false
+
+ingress:
+  enabled: false
+  class: nginx
+  path: /
+  host:
