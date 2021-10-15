@@ -4,6 +4,7 @@ metadata:
   labels:
     service: {{ .Values.container.microserviceName }}
   name: {{ .Values.container.microserviceName }}
+  namespace: {{ .Values.container.namespace }}
 spec:
   ports:
   {{ range $port := .Values.service.servicePort }}
