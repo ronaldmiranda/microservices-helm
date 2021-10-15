@@ -16,4 +16,4 @@ container:
 service:
   servicePort:
     - 8081
-  typeLoadBalancer: true
+  typeLoadBalancer: false
